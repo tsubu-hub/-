@@ -4,13 +4,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $name = htmlspecialchars($_POST['name']);
     $email = htmlspecialchars($_POST['email']);
     $school = htmlspecialchars($_POST['school']);
+    $phone = htmlspecialchars($_POST['phone']);
+    $address = htmlspecialchars($_POST['address']);
     $message = htmlspecialchars($_POST['message']);
 
-    // CSVファイルに書き込むためのデータを配列にする
-    $data = [$name, $email, $school, $message];
+    // 必要なデータだけを配列にする
+    $data = [$name, $email, $school, $phone, $address, $message];
 
     // CSVファイルにデータを書き込む
-    $file = fopen('entries.csv', 'a');
+    $file = fopen('filtered_entries.csv', 'a');
 
     // UTF-8 BOMを追加してエンコーディングを設定
     if (ftell($file) == 0) {
