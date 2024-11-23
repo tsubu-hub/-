@@ -11,12 +11,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // CSVファイルにデータを書き込む
     $file = fopen('entries.csv', 'a');
-    
+
     // UTF-8 BOMを追加してエンコーディングを設定
-    if (filesize('entries.csv') == 0) {
+    if (ftell($file) == 0) {
         fwrite($file, "\xEF\xBB\xBF");
     }
-    
+
     fputcsv($file, $data);
     fclose($file);
 
