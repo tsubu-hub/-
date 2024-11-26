@@ -1,32 +1,269 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>エントリーフォーム</title>
+    <title>工業大会バドミントン競技個人戦エントリーフォーム</title>
+    <style>
+        summary {
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            margin-bottom: 5px;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            padding: 8px;
+            font-size: 14px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        @media (min-width: 600px) {
+            .form-group {
+                flex-direction: row;
+                align-items: center;
+            }
+
+            .form-group label {
+                width: 150px;
+                margin-bottom: 0;
+            }
+
+            .form-group input,
+            .form-group textarea,
+            .form-group select {
+                flex: 1;
+            }
+        }
+    </style>
 </head>
+
 <body>
-    <h1>エントリーフォーム</h1>
+    <h1>工業大会バドミントン競技個人戦エントリーフォーム</h1>
+    <h2>※注意事項※<br>・必ず間違いの無いように記入、送信してください<br>・送信ボタン押下後に確認メールを送りますので必ずご確認ください<br>・申し込み後は棄権であっても参加費がかかりますのでご了承ください。<br>・間違いや不明点があれば多摩科学技術の津吹までお知らせください
+    </h2>
     <form name="contact" method="POST" data-netlify="true">
-        <label for="name">名前:</label>
-        <input type="text" id="name" name="name" required><br>
+        <div class="form-group">
+            <label for="school">学校名:</label>
+            <select id="school" name="school" required>
+            <option value="足立">足立工科</option>
+            <option value="荒川">荒川工科</option>
+            <option value="葛西">葛西工科</option>
+            <option value="蔵前">蔵前工科</option>
+            <option value="工芸">工芸</option>
+            <option value="科学技術">科学技術</option>
+            <option value="墨田">墨田工科</option>
+            <option value="橘">橘</option>
+            <option value="葛飾">葛飾総合</option>
+            <option value="本所">本所工科</option>
+            <option value="北豊島">北豊島工科</option>
+            <option value="王子">王子総合</option>
+            <option value="杉並">杉並工科</option>
+            <option value="田無">田無工科</option>
+            <option value="中野">中野工科</option>
+            <option value="練馬">練馬工科</option>
+            <option value="総合">総合工科</option>
+            <option value="世田谷">世田谷総合</option>
+            <option value="世田谷泉">世田谷泉</option>
+            <option value="つばさ">つばさ総合</option>
+            <option value="六郷">六郷工科</option>
+            <option value="多摩科技">多摩科学技術</option>
+            <option value="小金井">小金井工科</option>
+            <option value="多摩">多摩工科</option>
+            <option value="桑志">八王子桑志</option>
+            <option value="府中">府中工科</option>
+            <option value="町田">町田工科</option>
+        </select><br>
+        </div>
 
-        <label for="email">メールアドレス:</label>
-        <input type="email" id="email" name="email" required><br>
+        <div class="form-group"><label for="name">記入者氏名:</label>
+            <input type="text" id="name" name="name" required><br>
+        </div>
+        <div class="form-group"><label for="email">記入者メールアドレス:</label>
+            <input type="email" id="email" name="email" required><br>
+        </div>
 
-        <label for="school">学校名:</label>
-        <input type="text" id="school" name="school" required><br>
+        <div class="form-group"><label for="leader">12/14日引率者氏名(複数可):</label>
+            <textarea id="leader" name="leader"></textarea><br>
+        </div>
+        <div class="form-group"><label for="leader">12/15日引率者氏名(複数可):</label>
+            <textarea id="leader" name="leader"></textarea><br>
+        </div>
+        <div class="form-group"><label for="leader">12/21日引率者氏名(複数可):</label>
+            <textarea id="leader" name="leader"></textarea><br>
+        </div>
 
-        <label for="phone">電話番号:</label>
-        <input type="tel" id="phone" name="phone" required><br>
+        <div class="form-group"><label for="phone">12/14日緊急連絡先:</label>
+            <input type="tel" id="phone" name="phone" required><br>
+        </div>
+        <div class="form-group">
+            <label for="name">連絡先氏名:</label>
+            <input type="text" id="name" name="name" required><br>
+        </div>
+        <hr>
+        ↓以下引率責任者が変わる場合のみ記入してください↓
+        <hr>
 
-        <label for="address">住所:</label>
-        <input type="text" id="address" name="address" required><br>
+        <div class="form-group"><label for="phone">12/15日緊急連絡先:</label>
+            <input type="tel" id="phone" name="phone" required><br>
+        </div>
+        <div class="form-group"><label for="name">連絡先氏名:</label>
+            <input type="text" id="name" name="name" required><br>
+        </div>
 
-        <label for="message">メッセージ:</label>
-        <textarea id="message" name="message"></textarea><br>
+        <div class="form-group"><label for="phone">12/21日緊急連絡先:</label>
+            <input type="tel" id="phone" name="phone" required><br>
+        </div>
+        <div class="form-group"><label for="name">連絡先氏名:</label>
+            <input type="text" id="name" name="name" required>
+        </div>
+        <hr>
+        ↑ここまで↑
+        <hr><br>
+        <h2>出場選手エントリー欄</h2>
 
-        <input type="submit" value="送信">
+        <details>
+            <summary>男子シングルス1部</summary>
+            <h4>男子経験者のうちシングルスに出場する選手を記入してください<br>１人の選手が出場できるのは１種目までです</h4>
+            <div class="content">
+                <div class="form-group"><label for="player1-1">選手名1:</label>
+                    <input type="text" id="player1-1" name="player1-1" required><br>
+                </div>
+                <div class="form-group">
+                    <label for="kana1-1">ふりがな1:</label>
+                    <input type="text" id="kana1-1" name="kana1-1" required><br>
+                    <div class="form-group">
+                        <label for="grade1-1">学年:</label>
+                        <select id="grade1-1" name="grade1-1" required>
+                <option value="1">1年</option>
+                <option value="2">2年</option>
+                <option value="3">3年</option>
+                    <!-- 他の選手名とふりがなを必要な数だけ追加 -->
+                </div>
+            </div>
+        </details>
+
+        <details>
+            <summary>男子ダブルス</summary>
+            <div class="content">
+                <div>
+                   <strong>1組目</strong><br></div>
+                    <div class="form-group"><label for="player2-1">選手名1:</label>
+                    <input type="text" id="player2-1" name="player2-1" required></div>
+                    <div class="form-group"><label for="kana2-1">ふりがな1:</label>
+                    <input type="text" id="kana2-1" name="kana2-1" required></div>
+                        <div class="form-group">
+                  <label for="grade2-1">学年:</label>
+                     <select id="grade2-1" name="grade2-1" required>
+                      <option value="1">1年</option>
+                      <option value="2">2年</option>
+                      <option value="3">3年</option></div><div class="form-group">
+                    <label for="player2-2">選手名2:</label>
+                    <input type="text" id="player2-2" name="player2-2" required></div><div class="form-group">
+                    <label for="kana2-2">ふりがな2:</label>
+                    <input type="text" id="kana2-2" name="kana2-2" required></div>
+                    <div class="form-group">
+                  <label for="grade2-2">学年:</label>
+                   <select id="grade2-2" name="grade2-2" required>
+                         <option value="1">1年</option>
+                      <option value="2">2年</option>
+                     <option value="3">3年</option>
+                    <!-- 他の組を必要な数だけ追加 -->
+                </div>
+                <br>
+            </div>
+        </details>
+        <details>
+            <summary>男子シングルス2部</summary>
+            <h4>高校はじめの１年生（または競技を始めてから１年未満）の選手のみが対象です<br>申し込み条件に当てはまらないことが発覚した場合は棄権扱いとなりますのでご注意ください</h4>
+            <div class="content">
+                <div class="form-group"><label for="player3-1">選手名1:</label>
+                    <input type="text" id="player3-1" name="player3-1" required>
+                </div>
+                <div class="form-group">
+                    <label for="kana3-1">ふりがな1:</label>
+                    <input type="text" id="kana3-1" name="kana3-1" required></div>
+                    <div class="form-group">
+                        <label for="grade3-1">学年:</label>
+                        <select id="grade3-1" name="grade3-1" required>
+                <option value="1">1年</option>
+                <option value="2">2年</option>
+                <option value="3">3年</option>
+                </div><br>
+            </div>
+        </details>
+        <details>
+            <summary>女子シングルス1部</summary>
+            <h4>女子経験者のうちシングルスに出場する選手を記入してください<br>１人の選手が出場できるのは１種目までです</h4>
+            <div class="content">
+                <div class="form-group"><label for="player4-1">選手名1:</label>
+                    <input type="text" id="player4-1" name="player4-1" required>
+                </div>
+                <div class="form-group">
+                    <label for="kana4-1">ふりがな1:</label>
+                    <input type="text" id="kana4-1" name="kana4-1" required></div>
+                    <div class="form-group">
+                        <label for="grade4-1">学年:</label>
+                        <select id="grade4-1" name="grade4-1" required>
+                <option value="1">1年</option>
+                <option value="2">2年</option>
+                <option value="3">3年</option>
+                </div><br>
+            </div>
+        </details>
+        <details>
+            <summary>女子ダブルス</summary>
+            <h4>１人の選手が出場できるのは１種目までです</h4>
+            <div class="content">
+                <div class="form-group"><label for="player5-1">選手名1:</label>
+                    <input type="text" id="player5-1" name="player5-1" required>
+                </div>
+                <div class="form-group">
+                    <label for="kana5-1">ふりがな1:</label>
+                    <input type="text" id="kana5-1" name="kana5-1" required></div>
+                    <div class="form-group">
+                        <label for="grade5-1">学年:</label>
+                        <select id="grade5-1" name="grade5-1" required>
+                <option value="1">1年</option>
+                <option value="2">2年</option>
+                <option value="3">3年</option>
+                </div><br>
+            </div>
+        </details>
+        <details>
+            <summary>女子シングルス2部</summary>
+            <h4>高校はじめの１年生（または競技を始めてから１年未満）の選手のみが対象です<br>申し込み条件に当てはまらないことが発覚した場合は棄権扱いとなりますのでご注意ください</h4>
+            <div class="content">
+                <div class="form-group"><label for="player6-1">選手名1:</label>
+                    <input type="text" id="player6-1" name="player6-1" required>
+                </div>
+                <div class="form-group">
+                    <label for="kana6-1">ふりがな1:</label>
+                    <input type="text" id="kana6-1" name="kana6-1" required></div>
+                    <div class="form-group">
+                        <label for="grade6-1">学年:</label>
+                        <select id="grade6-1" name="grade6-1" required>
+                <option value="1">1年</option>
+                <option value="2">2年</option>
+                <option value="3">3年</option>
+                </div><br>
+            </div>
+        </details>
+        <div class="sousinn">
+        <input type="submit" value="送信"></div>
     </form>
 </body>
+
 </html>
