@@ -13,27 +13,27 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $name_15 = htmlspecialchars($_POST['name15']);
     $phone_21 = htmlspecialchars($_POST['phone21']);
     $name_21 = htmlspecialchars($_POST['name21']);
-    $player1_1 = htmlspecialchars($_POST['player1-1']);
-    $kana1_1 = htmlspecialchars($_POST['kana1-1']);
-    $grade1_1 = htmlspecialchars($_POST['grade1-1']);
-    $player2_1 = htmlspecialchars($_POST['player2-1']);
-    $kana2_1 = htmlspecialchars($_POST['kana2-1']);
-    $grade2_1 = htmlspecialchars($_POST['grade2-1']);
-    $player2_2 = htmlspecialchars($_POST['player2-2']);
-    $kana2_2 = htmlspecialchars($_POST['kana2-2']);
-    $grade2_2 = htmlspecialchars($_POST['grade2-2']);
-    $player3_1 = htmlspecialchars($_POST['player3-1']);
-    $kana3_1 = htmlspecialchars($_POST['kana3-1']);
-    $grade3_1 = htmlspecialchars($_POST['grade3-1']);
-    $player4_1 = htmlspecialchars($_POST['player4-1']);
-    $kana4_1 = htmlspecialchars($_POST['kana4-1']);
-    $grade4_1 = htmlspecialchars($_POST['grade4-1']);
-    $player5_1 = htmlspecialchars($_POST['player5-1']);
-    $kana5_1 = htmlspecialchars($_POST['kana5-1']);
-    $grade5_1 = htmlspecialchars($_POST['grade5-1']);
-    $player6_1 = htmlspecialchars($_POST['player6-1']);
-    $kana6_1 = htmlspecialchars($_POST['kana6-1']);
-    $grade6_1 = htmlspecialchars($_POST['grade6-1']);
+    $player1_1 = htmlspecialchars($_POST['player11']);
+    $kana1_1 = htmlspecialchars($_POST['kana11']);
+    $grade1_1 = htmlspecialchars($_POST['grade11']);
+    $player2_1 = htmlspecialchars($_POST['player21']);
+    $kana2_1 = htmlspecialchars($_POST['kana21']);
+    $grade2_1 = htmlspecialchars($_POST['grade21']);
+    $player2_2 = htmlspecialchars($_POST['player22']);
+    $kana2_2 = htmlspecialchars($_POST['kana22']);
+    $grade2_2 = htmlspecialchars($_POST['grade22']);
+    $player3_1 = htmlspecialchars($_POST['player31']);
+    $kana3_1 = htmlspecialchars($_POST['kana31']);
+    $grade3_1 = htmlspecialchars($_POST['grade31']);
+    $player4_1 = htmlspecialchars($_POST['player41']);
+    $kana4_1 = htmlspecialchars($_POST['kana41']);
+    $grade4_1 = htmlspecialchars($_POST['grade41']);
+    $player5_1 = htmlspecialchars($_POST['player51']);
+    $kana5_1 = htmlspecialchars($_POST['kana51']);
+    $grade5_1 = htmlspecialchars($_POST['grade51']);
+    $player6_1 = htmlspecialchars($_POST['player61']);
+    $kana6_1 = htmlspecialchars($_POST['kana61']);
+    $grade6_1 = htmlspecialchars($_POST['grade61']);
 
     // データを保存する処理（例：データベースに保存、ファイルに書き込むなど）
     // ここでは例としてファイルに書き込む方法を示します
@@ -44,12 +44,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $current .= "12/14日緊急連絡先: $phone_14, 連絡先氏名: $name_14\n";
     $current .= "12/15日緊急連絡先: $phone_15, 連絡先氏名: $name_15\n";
     $current .= "12/21日緊急連絡先: $phone_21, 連絡先氏名: $name_21\n";
-    $current .= "男子シングルス1部: $player1_1, $kana1_1, $grade1_1\n";
-    $current .= "男子ダブルス: 選手1: $player2_1, $kana2_1, $grade2_1; 選手2: $player2_2, $kana2_2, $grade2_2\n";
-    $current .= "男子シングルス2部: $player3_1, $kana3_1, $grade3_1\n";
-    $current .= "女子シングルス1部: $player4_1, $kana4_1, $grade4_1\n";
-    $current .= "女子ダブルス: $player5_1, $kana5_1, $grade5_1\n";
-    $current .= "女子シングルス2部: $player6_1, $kana6_1, $grade6_1\n";
+    $current .= "男子シングルス1部: $player11, $kana11, $grade11\n";
+    $current .= "男子ダブルス: 選手1: $player21, $kana21, $grade21; 選手2: $player22, $kana22, $grade22\n";
+    $current .= "男子シングルス2部: $player31, $kana31, $grade31\n";
+    $current .= "女子シングルス1部: $player41, $kana41, $grade41\n";
+    $current .= "女子ダブルス: $player51, $kana51, $grade51\n";
+    $current .= "女子シングルス2部: $player61, $kana61, $grade61\n";
     file_put_contents($file, $current);
 
     // ユーザーに対するフィードバック
