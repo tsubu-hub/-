@@ -35,24 +35,23 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $kana61 = htmlspecialchars($_POST['kana61']);
     $grade61 = htmlspecialchars($_POST['grade61']);
 
-    // データを保存する処理（例：データベースに保存、ファイルに書き込むなど）
-    // ここでは例としてファイルに書き込む方法を示します
-    $file = 'form_data.txt';
-    $current = file_get_contents($file);
-    $current .= "学校名: $school\n記入者氏名: $name\n記入者メールアドレス: $email\n";
-    $current .= "12/14日引率者氏名: $leader_14\n12/15日引率者氏名: $leader_15\n12/21日引率者氏名: $leader_21\n";
-    $current .= "12/14日緊急連絡先: $phone_14, 連絡先氏名: $name_14\n";
-    $current .= "12/15日緊急連絡先: $phone_15, 連絡先氏名: $name_15\n";
-    $current .= "12/21日緊急連絡先: $phone_21, 連絡先氏名: $name_21\n";
-    $current .= "男子シングルス1部: $player11, $kana11, $grade11\n";
-    $current .= "男子ダブルス: 選手1: $player21, $kana21, $grade21; 選手2: $player22, $kana22, $grade22\n";
-    $current .= "男子シングルス2部: $player31, $kana31, $grade31\n";
-    $current .= "女子シングルス1部: $player41, $kana41, $grade41\n";
-    $current .= "女子ダブルス: $player51, $kana51, $grade51\n";
-    $current .= "女子シングルス2部: $player61, $kana61, $grade61\n";
-    file_put_contents($file, $current);
+    // メール内容の構築
+    $message = "送信が完了しました。以下確認用の記入内容です。\n\n";
+    $message .= "学校名: $school\n";
+    $message .= "記入者氏名: $name\n\n";
+    $message .= "出場選手エントリー内容:\n";
+    $message .= "- 男子シングルス1部: $player11,$kana11,$grade11\n";
+    $message .= "- 男子ダブルス: $player21,$kana21,$grade21,$player22,$kana22,$grade22\n";
+    $message .= "- 男子シングルス2部: $player31,$kana31,$grade31\n";
+    $message .= "- 女子シングルス1部: $player41,$kana41,$grade41\n";
+    $message .= "- 女子ダブルス: $player51,$kana51,$grade51\n";
+    $message .= "- 女子シングルス2部: $player61,$kana61,$grade61\n\n";
+    $message .= "上記内容をご確認ください。";
+
+    // メールの送信
+    mail($email, "エントリーフォームの確認", $message);
 
     // ユーザーに対するフィードバック
-    echo "送信が完了しました。";
+    echo "送信が完了しました。以下確認用の記入内容です。\n\n$message";
 }
 ?>
