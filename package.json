@@ -1,5 +1,5 @@
 {
-  "name": "your-repository-name",
+  "name": "kougyou",
   "version": "1.0.0",
   "description": "This is an example project",
   "main": "index.js",
@@ -8,6 +8,9 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
-    "mailgun-js": "^3.0.0"  // 最新バージョンに変更
-  }
+    "mailgun-js": "^3.0.0"
+  },
+  "devDependencies": {},
+  "author": "Your Name",
+  "license": "ISC"
 }
