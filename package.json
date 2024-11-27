@@ -8,9 +8,6 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
-    "mailgun-js": "^3.0.0"
-  },
-  "devDependencies": {},
-  "author": "Your Name",
-  "license": "ISC"
+    "mailgun-js": "^0.22.0"
+  }
 }
